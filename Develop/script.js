@@ -25,10 +25,10 @@ var hourSpan;
 var interval = setInterval(function() {
     var momentNow = moment();
     $('#currentDay').html(momentNow.format('YYYY MMMM DD') + ' '
-        + momentNow.format('dddd')
-          .subrsting(0,3).toUpperCase());
+                        + momentNow.format('dddd')
+                         .substring(0,3).toUpperCase());
     $('#currentDay').html(currentDate + " " + momentNow.format('hh:mm:ss A'));
-}, 100);
+  }, 100); 
 
 function initPage() {
 
@@ -68,5 +68,39 @@ function initPage() {
 }
 
 function background () {
-    
-}
+      
+    $(".form-control").each(function () {
+        var timeTest = parseInt($(this).attr("id"));
+        hour = parseInt(hour);
+        console.log(timeTest);
+        console.log(hour);
+        if (hour > timeTest) {
+            $(this).addClass("past");
+        } else if (hour < timeTest) {
+            $(this).addClass("future");
+        } else {
+            $(this).addClass("present");
+        }
+    });
+  }
+
+  $(document).ready(function(){
+    initPage()
+    background()
+  
+    // Save to Local Storage
+    $(".saveBtn").on("click", function(){
+      userInput = $(this).siblings(".form-control").val().trim();
+      console.log(userInput);
+      hourSpan = $(this).siblings(".input-group-prepend").text().trim();
+      console.log(hourSpan);
+      localStorage.setItem(hourSpan, JSON.stringify(userInput));
+  
+    })
+    // Clear the day
+    $("#clearDay").on("click", function(){
+      localStorage.clear();
+      initPage()
+    }) 
+  
+  });

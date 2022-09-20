@@ -20,3 +20,6 @@ THEN the text for that event is saved in local storage
 WHEN I refresh the page
 THEN the saved events persist
 
+## Difficulties
+
+The hardest part of this was creating the functions to get this to work and console log everything. I had to do a lot of research to find what would work. Luckily there are a lot of examples of how to do this on google.
