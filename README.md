@@ -25,3 +25,11 @@ THEN the saved events persist
 The hardest part of this was creating the functions to get this to work and console log everything. I had to do a lot of research to find what would work. Luckily there are a lot of examples of how to do this on google.
 
 [Alt text](./assets/imgs/work%20day%20scheduler.png "Work Day Scheduler!")
+
+
+
+Repository URL:
+https://github.com/SyrusFarris/work-day-scheduler
+
+Delpoyed URL:
+git@github.com:SyrusFarris/work-day-scheduler.git
